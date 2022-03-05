@@ -53,7 +53,11 @@ if($query->num_rows > 0){
 }else{ ?>
     <p>No image(s) found...</p>
 <?php } ?>
-            
+     
+        <br><br><br>
+     <form method="get" action="index.php">
+    <button type="submit">Ricarica</button>
+</form>
         
 </body>
 
