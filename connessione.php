@@ -5,7 +5,7 @@
 
 
 
-$dbHost     = "localhost";
+$dbHost     = "31.11.39.64";
 $dbUsername = "Sql1592799";
 $dbPassword = "Francesco.2022";
 $dbName     = "Sql1592799_2";
