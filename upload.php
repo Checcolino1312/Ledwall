@@ -35,3 +35,14 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
 // Display status message
 echo $statusMsg;
 ?>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<form method="get" action="/uploaded.php">
+    <button type="submit">Continue</button>
+</form>
+    
+    </body>
+</html>
