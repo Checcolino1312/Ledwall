@@ -5,10 +5,10 @@
 
 
 
-$dbHost     = "localhost";
-$dbUsername = "Sql1592799";
-$dbPassword = "Francesco.2022";
-$dbName     = "Sql1592799_2";
+$dbHost     = "remotemysql.com";
+$dbUsername = "WHjoihI1Cb";
+$dbPassword = "5rlzrnfJMq";
+$dbName     = "WHjoihI1Cb";
 
 
 
