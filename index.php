@@ -9,7 +9,7 @@ include_once "connessione.php";
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Recupero email</title>
+        <title>Update Ledwall</title>
         <link href="stile.css" rel="stylesheet" type="text/css">
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
