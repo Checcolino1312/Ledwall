@@ -4,21 +4,17 @@
 <?php 
 
 
+$sname = "remotemysql.com";
+$uname = "WHjoihI1Cb";
+$password = "5rlzrnfJMq";
 
-$dbHost     = "remotemysql.com";
-$dbUsername = "WHjoihI1Cb";
-$dbPassword = "5rlzrnfJMq";
-$dbName     = "WHjoihI1Cb";
+$db_name = "WHjoihI1Cb";
 
+$conn = mysqli_connect($sname, $uname, $password, $db_name);
 
-
-
-
-// Create database connection
-$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-
-// Check connection
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
+if (!$conn) {
+	echo "Connection failed!";
+	exit();
 }
+
 ?>
