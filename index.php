@@ -1,32 +1,27 @@
+<?php
+include_once "connessione.php";
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Image Upload Using PHP</title>
-	<style>
-		body {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			min-height: 100vh;
-		}
-	</style>
-</head>
-<body>
-	<?php if (isset($_GET['error'])): ?>
-		<p><?php echo $_GET['error']; ?></p>
-	<?php endif ?>
-     <form action="upload.php"
-           method="post"
-           enctype="multipart/form-data">
-
-           <input type="file" 
-                  name="my_image">
-
-           <input type="submit" 
-                  name="submit"
-                  value="Upload">
-     	
-     </form>
-</body>
+    <head>
+        <title>Update Ledwall</title>
+        <link href="stile.css" rel="stylesheet" type="text/css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            
+ <form action="upload.php" method="post" enctype="multipart/form-data">
+    Select Image File to Upload:
+    <input type="file" name="file">
+    <input type="submit" name="submit" value="Upload">
+</form>
+        </div>
+    </body>
 </html>
