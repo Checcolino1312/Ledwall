@@ -1,44 +1,63 @@
-<?php include "connessione.php"; ?>
+
 <!DOCTYPE html>
 <html>
-<head>
-	<title>View</title>
-	<style>
-		body {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-wrap: wrap;
-			min-height: 100vh;
-		}
-		.alb {
-			width: 200px;
-			height: 200px;
-			padding: 5px;
-		}
-		.alb img {
-			width: 100%;
-			height: 100%;
-		}
-		a {
-			text-decoration: none;
-			color: black;
-		}
-	</style>
-</head>
-<body>
-     <a href="index.php">&#8592;</a>
-     <?php 
-          $sql = "SELECT * FROM images ORDER BY id DESC";
-          $res = mysqli_query($conn,  $sql);
 
-          if (mysqli_num_rows($res) > 0) {
-          	while ($images = mysqli_fetch_assoc($res)) {  ?>
-             
-             <div class="alb">
-             	<img src="uploads/<?=$images['image_url']?>">
-             </div>
-          		
-    <?php } }?>
+<head>
+    
+    <style>
+    html, body {
+    background: #000;
+    margin: 0;
+    padding: 0;
+    
+    width: 288px;
+    height: 288px;
+}
+
+#video-wrap {
+    background: #000;
+    width: 288px;
+    height: 288px;
+    margin: auto;
+    
+}
+
+#video {
+    display: block;
+    object-fit: cover;
+    width: 288px;
+    height: 288px;
+    margin: auto;
+    font-size: 1px;
+}
+    </style>
+    
+    
+    </head>
+    <body width="288" height="288">
+        
+            
+<?php
+// Include the database configuration file
+include 'connessione.php';
+
+// Get images from the database
+$query = $db->query("SELECT * FROM images ORDER BY uploaded_on DESC");
+
+if($query->num_rows > 0){
+    while($row = $query->fetch_assoc()){
+        $imageURL = 'uploads/'.$row["file_name"];
+?>
+  <img width="288" height="288" src="<?php echo $imageURL; ?>" alt="" />
+<?php }
+}else{ ?>
+    <p>No image(s) found...</p>
+<?php } ?>
+     
+        <br><br><br>
+     <form method="get" action="index.php">
+    <button type="submit">Ricarica</button>
+</form>
+        
 </body>
-</html>
+
